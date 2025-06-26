@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Birthday Invite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background: #fffbe6;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #startBtn {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        #startBtn:hover {
+            background-color: #ff85c1;
+        }
+
+        #surpriseBtn,
+        #rsvpBtn,
+        #yesBtn {
+            background-color: #65af4c;
+            color: white;
+            margin-top: 20px;
+            width: 220px;
+            font-size: 1.2rem;
+        }
+
+        #surpriseBtn:hover,
+        #rsvpBtn:hover,
+        #yesBtn:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+
+        #videoContainer,
+        #finalContainer,
+        #confirmationContainer,
+        #messageContainer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+        }
+
+        h2 {
+            margin-bottom: 16px;
+            color: #ff69b4;
+        }
+
+        .photo {
+            max-width: 500px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="startBtn">Click me ❤️</button>
+
+    <div id="videoContainer">
+        <h2>Happy Birthday Alayna 😘🎉👯‍♀️🍾</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tL6SQ2PGXV4?si=HGPLMSmhzPK1pVOS&autoplay=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <button id="surpriseBtn">ok cuhh click me</button>
+    </div>
+
+    <div id="finalContainer">
+        <img class="photo" src="party.jpg" alt="Birthday Fun" />
+        <p>
+            Okay, okay, we promise to stop with the birthday shenanigans… but seriously, we want to take you out for a
+            ridiculously awesome, magically delicious dinner. Think sparkly unicorns and tasty food. Please RSVP down
+            below before we start planning the confetti cannon!
+        </p>
+        <button id="rsvpBtn">RSVP</button>
+    </div>
+
+    <div id="confirmationContainer">
+        <img class="photo" src="Screenshot 2025-06-26 at 9.28.34 PM.png" alt="Celebration" />
+        <p>See you there?</p>
+        <button id="yesBtn">Of course!🥰</button>
+    </div>
+
+    <div id="messageContainer">
+        <p>
+            <strong>Our dear Alayna,</strong><br><br>
+            Happy birthday once again! We love you so much and can’t wait to celebrate this amazing day with you.
+            Just like a happy charm, you’re the sparkle and joy in our lives.<br><br>
+            See you very soon!<br><br>
+            XOXO,<br>
+            Angel and Xuanle 💖
+        </p>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const videoContainer = document.getElementById('videoContainer');
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const finalContainer = document.getElementById('finalContainer');
+        const rsvpBtn = document.getElementById('rsvpBtn');
+        const confirmationContainer = document.getElementById('confirmationContainer');
+        const yesBtn = document.getElementById('yesBtn');
+        const messageContainer = document.getElementById('messageContainer');
+
+        startBtn.addEventListener('click', () => {
+            startBtn.style.display = 'none';
+            videoContainer.style.display = 'flex';
+        });
+
+        surpriseBtn.addEventListener('click', () => {
+            videoContainer.style.display = 'none';
+            finalContainer.style.display = 'flex';
+        });
+
+        rsvpBtn.addEventListener('click', () => {
+            finalContainer.style.display = 'none';
+            confirmationContainer.style.display = 'flex';
+        });
+
+        yesBtn.addEventListener('click', () => {
+            confirmationContainer.style.display = 'none';
+            messageContainer.style.display = 'flex';
+        });
+    </script>
+
+</body>
+
+</html>
